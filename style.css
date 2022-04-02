@@ -1,0 +1,23 @@
+.canvas {
+    width: 20rem;
+    height: 5rem;
+    border-style: outset;
+    border-color: royalblue;
+}
+
+.columnBox {
+    display: flex;
+    border-style: solid;
+    border-color: black;
+    width: 15rem;
+    height: 10rem;
+    
+}
+
+.rowBox {
+    display: flex;
+    border-style: double;
+    border-color: red;
+    width: 5rem;
+    height: 10rem;
+}
