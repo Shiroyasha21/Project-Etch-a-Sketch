@@ -1,23 +1,40 @@
-.canvas {
-    width: 20rem;
-    height: 5rem;
+#projectContainer {
+    width: 660px;
+    height: 500px;
     border-style: outset;
     border-color: royalblue;
+    
 }
+
+/* #canvas {
+    
+} */
 
 .columnBox {
     display: flex;
+    flex-direction: column;
     border-style: solid;
     border-color: black;
-    width: 15rem;
-    height: 10rem;
+    
     
 }
 
 .rowBox {
     display: flex;
+    flex-direction: row;
     border-style: double;
     border-color: red;
-    width: 5rem;
-    height: 10rem;
+    
+}
+
+.project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#tools {
+    display: flex;
+    margin-bottom: 2.5rem;
 }
