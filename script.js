@@ -10,7 +10,7 @@ const valueTextField = document.createElement('input');
 valueTextField.setAttribute('type', 'number');
 valueTextField.setAttribute('min', '1');
 valueTextField.setAttribute('max', '100');
-valueTextField.setAttribute('value', '3');
+valueTextField.setAttribute('value', '16');
 valueTextField.className = 'textField';
 tools.append(valueTextField);
 
