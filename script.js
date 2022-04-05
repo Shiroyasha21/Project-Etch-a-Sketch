@@ -6,16 +6,46 @@ const canvas = document.createElement('div');
 canvas.setAttribute('id', 'canvas');
 projectContainer.append(canvas);
 
+
 const valueTextField = document.createElement('input');
 valueTextField.setAttribute('type', 'number');
 valueTextField.setAttribute('min', '1');
 valueTextField.setAttribute('max', '100');
-valueTextField.setAttribute('value', '16');
+valueTextField.setAttribute('value', '16')
 valueTextField.className = 'textField';
 tools.append(valueTextField);
 
+valueTextField.oninput = () => {
+    if (valueTextField.value > 100) {
+        valueTextField.value = 100;
+    } else if (valueTextField.value.length > 3) {
+        valueTextField.value = valueTextField.value.slice(0, 3);
+    }
+}
 
-let gridValue = valueTextField.value;
+valueTextField.addEventListener('input', e => {
+    universalValue = valueTextField.value;
+    const updateSlider = () => {
+        slider.value = valueTextField.value
+    }
+    updateSlider();
+})
+
+const slider = document.querySelector('.slider');
+
+slider.addEventListener('input', e => {
+    let value = slider.value;
+    valueTextField.value = value;
+})
+
+const submitBtn = document.createElement('button');
+submitBtn.textContent = 'Change Grid';
+tools.append(submitBtn);
+
+
+let universalValue = valueTextField.value;
+
+let gridValue = universalValue;
 
 function gridMaker(gridValue) {
     for (i = 0; i < gridValue; i++)     {
@@ -30,38 +60,30 @@ function gridMaker(gridValue) {
     }
 }
 
-// valueTextField.addEventListener('keydown', registerValueEntered);
-
-// function registerValueEntered(event) {
-//     if (event.which === 13) {
-//         valueRegister();
-//     }
-// }
-
-
 gridMaker(gridValue);
 
+submitBtn.addEventListener('click', e => {
+    gridValue = slider.value;
+    gridValue = valueTextField.value;
+    gridMaker(gridValue);
+})
 
-valueTextField.oninput = () => {
-    if (valueTextField.value > 100) {
-        valueTextField.value = 100;
-    } else if (valueTextField.value.length > 3) {
-        valueTextField.value = valueTextField.value.slice(0, 3);
-    }
+
+const cells = document.querySelectorAll('.rowBox');
+
+cells.forEach(cell => {
+    cell.addEventListener('click', function(e) {
+        changeDivColor(e);
+    })
+})
+
+function changeDivColor(e) {
+    e.target.classList.add('mouseAction');
 }
 
 
+    
 
-
-
-
-
-var eraser = document.getElementById('erasure');
-let elementSketch = document.getElementById('canvas');
-
-eraser.addEventListener('click', e => {
-    elementSketch.remove();
-})
 
 
 

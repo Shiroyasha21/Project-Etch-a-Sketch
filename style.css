@@ -1,9 +1,20 @@
+body {
+    background-color: #546e7a; 
+}
+
+.title {
+    color: #ffffff;
+}
+
 #projectContainer {
+    background-color: #ffffff;
     display: flex;
-    width: 1200px;
-    height: 1000px;
-    border-style: outset;
-    border-color: royalblue;
+    width: 900px;
+    height: 600px;
+    border-style: solid;
+    border-width: 6.5px;
+    border-color: #121212;
+    border-radius: 1.5%;
     
 }
 
@@ -24,21 +35,16 @@
     align-content: center;
     align-items: stretch;
     flex: 1 1;
-    
     width: 100%;
-    border-style: solid;
-    border-color: green;
-    border-radius: 5%; 
-    
 }
 
 .rowBox {
     flex: 1;
     width: 100%;
     height: 100%;
-    border-style: double;
-    border-color: red;
-    
+    border-style: solid;
+    border-color: #121212;
+    border-width: 0.1px;
 }
 
 .project {
@@ -51,4 +57,46 @@
 #tools {
     display: flex;
     margin-bottom: 2.5rem;
+}
+
+.gridSlider {
+    width: 100%;
+    
+}
+
+.slider {
+    background: #d3d3d3;
+    outline: none;
+    width: 100%;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.defaultRowColor {
+    background: white;
+}
+
+.mouseAction {
+    background: red;
 }
