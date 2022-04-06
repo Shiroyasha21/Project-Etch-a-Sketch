@@ -47,6 +47,8 @@ let universalValue = valueTextField.value;
 
 let gridValue = universalValue;
 
+//generating the grid using default and user input
+
 function gridMaker(gridValue) {
     for (i = 0; i < gridValue; i++)     {
         const column = document.createElement('div');
@@ -65,9 +67,16 @@ gridMaker(gridValue);
 submitBtn.addEventListener('click', e => {
     gridValue = slider.value;
     gridValue = valueTextField.value;
+    removeGrid();
     gridMaker(gridValue);
 })
 
+
+function removeGrid() {
+    document.querySelectorAll(".columnBox").forEach(e => e.remove());
+}
+
+//changing individual colors of divs
 
 const cells = document.querySelectorAll('.rowBox');
 
