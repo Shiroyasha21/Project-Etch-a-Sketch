@@ -60,6 +60,20 @@ function gridMaker(gridValue) {
             column.append(row);
         }
     }
+
+    //changing individual colors of divs
+    const cells = document.querySelectorAll('.rowBox');
+
+    cells.forEach(cell => {
+        cell.addEventListener('click', function(e) {
+            const changeColor = () => {
+                e.target.classList.toggle('mouseAction');
+            }
+
+            changeColor();
+        })
+        
+})
 }
 
 gridMaker(gridValue);
@@ -71,24 +85,20 @@ submitBtn.addEventListener('click', e => {
     gridMaker(gridValue);
 })
 
-
 function removeGrid() {
     document.querySelectorAll(".columnBox").forEach(e => e.remove());
 }
 
-//changing individual colors of divs
+const resetBtn = document.getElementById('reset');
 
-const cells = document.querySelectorAll('.rowBox');
-
-cells.forEach(cell => {
-    cell.addEventListener('click', function(e) {
-        changeDivColor(e);
-    })
+resetBtn.addEventListener('click', e => {
+    removeGrid();
+    gridMaker(gridValue);
 })
 
-function changeDivColor(e) {
-    e.target.classList.add('mouseAction');
-}
+
+
+
 
 
     
